@@ -10,8 +10,6 @@ const app = express();
 app.use(cors());
 app.use(express.json()); // Allow JSON parsing
 
-const uri = 'mongodb+srv://root:1234@cybercart.jmpiy.mongodb.net/?retryWrites=true&w=majority&appName=cybercart'
-
 const connect = async () => {
     try{
         await mongoose.connect(uri);
