@@ -38,7 +38,7 @@ function UserLogin() {
       toast.success("Login Successful!");
       localStorage.setItem("token", data.token);
       setTimeout(() => {
-        navigate("/user_dashboard"); // Redirect after login
+        navigate("/admin-dashboard"); // Redirect after login
       }, 1000);
     } else {
       toast.error(
