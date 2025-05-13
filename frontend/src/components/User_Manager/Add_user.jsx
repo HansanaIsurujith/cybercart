@@ -29,7 +29,7 @@ function AddUser() {
       if (response.data.success) {
         toast.success("User Added successful!");
         setTimeout(() => {
-          navigate("/admin_dashboard");
+          navigate("/admin-dashboard");
         }, 1000);
       } else {
         toast.error(response.data.message || "Error in User Creation");
