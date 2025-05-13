@@ -9,8 +9,8 @@ function Login_hub() {
       <p>Please select a section to log in.</p>
       <Link to="/product-manager-login">Product Manager</Link>
       <Link to="/user-manager-login">User Manager</Link>
-      <Link to="#">Product</Link>
-      <Link to="#">Product</Link>
+      <Link to="#">interaction Manager</Link>
+      
     </div>
   );
 }
