@@ -1,0 +1,106 @@
+#profile-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  height: 100vh;
+  overflow: hidden; /* Ensure content does not spill outside the container */
+}
+
+#profile-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("../../assets/profileback.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: blur(3px); /* Adjust blur level here */
+  z-index: -1; /* Keep the background layer behind the content */
+}
+
+#profile-card {
+  background-color: rgba(255, 255, 255, 0.429); /* Adjust transparency */
+  border-radius: 15px; /* Soften the corners a bit more */
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+  width: 500px;
+  height: 500px;
+  text-align: center;
+  position: relative;
+  backdrop-filter: blur(10px); /* Glassmorphism blur effect */
+}
+
+#profile-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: blur(10px); /* You can adjust this or remove it */
+  z-index: -1; /* Ensures the background image stays behind */
+}
+
+#avatar-section {
+  margin-top: 60px;
+  margin-bottom: 20px;
+}
+
+#avatar {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+#user-info {
+  margin-bottom: 20px;
+}
+
+#user-info input {
+  display: block;
+  width: 100%;
+  margin: 5px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#user-info h2,
+p {
+  color: black;
+  box-shadow: none;
+  text-align: center;
+}
+
+#profile-actions button {
+  margin: 10px 5px;
+  padding: 10px 15px;
+  background-color: #2e8bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#profile-actions button:hover {
+  opacity: 0.9;
+}
+
+#profile-actions button:nth-child(2) {
+  background-color: #f39c12;
+}
+
+#profile-actions button:nth-child(3) {
+  background-color: #e74c3c;
+}
+
+#profile-actions button:nth-child(4) {
+  background-color: #34495e;
+}

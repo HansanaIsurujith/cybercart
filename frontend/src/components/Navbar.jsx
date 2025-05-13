@@ -7,12 +7,17 @@ const Navbar = () => {
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userName, setUserName] = useState("");
+  const [userId, setUserId] = useState("");
 
   const logout = () => {
     localStorage.removeItem("token");
-    setIsLoggedIn(false); // Set state to reflect user is logged out
-    setUserName(""); // Clear the username
-    navigate("/"); // Redirect to homepage or a login page
+    setIsLoggedIn(false);
+    setUserName("");
+    navigate("/");
+  };
+
+  const goProfile = () => {
+    navigate(`/profile/${userId}`);  // Pass userId to profile route
   };
 
   useEffect(() => {
@@ -22,6 +27,7 @@ const Navbar = () => {
 
       const decodedToken = jwtDecode(token);
       setUserName(decodedToken.name);
+      setUserId(decodedToken.id);
     } else {
       setIsLoggedIn(false); // User is not logged in
     }
@@ -37,7 +43,7 @@ const Navbar = () => {
         <Link to="/product">Products</Link>
         {isLoggedIn ? (
           <>
-            <span>Hi, {userName}</span>
+            <span onClick={goProfile} style={{cursor: "pointer"}}>Hi, {userName}</span>
             <Link onClick={logout} type="button">
               Log Out
             </Link>
